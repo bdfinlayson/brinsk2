@@ -11,13 +11,13 @@ const appRoutes: Routes = [
 ]
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent
-  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
+  ],
+  declarations: [
+    AppComponent,
+    LoginComponent
   ],
   providers: [
     AuthService
