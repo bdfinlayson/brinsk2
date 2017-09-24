@@ -11,6 +11,15 @@ export class LoginComponent implements OnInit {
   test: string = 'just a test';
   constructor(private auth: AuthService) {}
   ngOnInit(): void {
-    console.log(this.auth.test())
+    let sampleUser: any = {
+      email: 'bryan.finlayson@metova.com' as string,
+      password: 'Metova$1234' as string
+    };
+    this.auth.login(sampleUser).then((user) => {
+      console.log(user.json())
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 }
