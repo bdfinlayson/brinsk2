@@ -3,16 +3,17 @@ import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user';
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-
-export class LoginComponent {
+export class RegisterComponent {
   user: User = new User();
-  constructor(private auth: AuthService) {}
-  onLogin(): void {
-    this.auth.login(this.user).then((user) => {
+
+  constructor(private auth: AuthService) { }
+
+  onRegister(): void {
+    this.auth.register(this.user).then((user) => {
       console.log(user);
     })
     .catch((error) => {
