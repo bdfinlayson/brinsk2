@@ -15,8 +15,21 @@ export class LoginComponent implements OnInit {
       email: 'test@test.com' as string,
       password: 'test1234' as string
     };
+    let newUser: any = {
+      email: 'any5@any.com' as string,
+      password: 'any12345' as string,
+      password_confirmation: 'any12345' as string
+    };
+
     this.auth.login(sampleUser).then((user) => {
-      console.log(user)
+      console.log(user);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+
+    this.auth.register(newUser).then((user) => {
+      console.log(user);
     })
     .catch((error) => {
       console.log(error);
