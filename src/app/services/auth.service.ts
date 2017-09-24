@@ -4,10 +4,11 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AuthService {
-  private BASE_URL: string = 'http://localhost:3000/api/v1/users/sign_in'
+  private BASE_URL: string = 'http://localhost:3000/api/v1/auth/sign_in'
   private headers: Headers = new Headers({
-    'Content-Type': 'text/plain'
+    'Content-Type': 'application/json'
   });
+
   constructor(private http: Http) {}
   login(user): Promise<any> {
     let url: string = `${this.BASE_URL}`;
