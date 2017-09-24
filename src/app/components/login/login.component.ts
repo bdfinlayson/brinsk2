@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
       password: 'test1234' as string
     };
     this.auth.login(sampleUser).then((user) => {
-      console.log(user.json())
+      console.log(user)
     })
     .catch((error) => {
       console.log(error);
