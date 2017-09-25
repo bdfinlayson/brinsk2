@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -10,11 +11,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(user: User): Promise<any> {
+  login(user: User): Observable<any> {
     let url: string = `${this.BASE_URL}`;
     return this.http
-      .post(url, user)
-      .toPromise();
+      .post(url, user, { observe: 'response' });
   }
 
   register(user: User): Promise<any> {

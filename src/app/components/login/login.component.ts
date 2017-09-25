@@ -10,13 +10,13 @@ import { User } from '../../models/user';
 
 export class LoginComponent {
   user: User = new User();
+
   constructor(private auth: AuthService) {}
+
   onLogin(): void {
-    this.auth.login(this.user).then((user) => {
-      console.log(user);
-    })
-    .catch((error) => {
-      console.log(error);
+    console.log(this.user)
+    this.auth.login(this.user).subscribe(response => {
+      console.log(response);
     })
   }
 }
