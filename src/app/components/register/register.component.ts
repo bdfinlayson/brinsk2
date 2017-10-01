@@ -12,12 +12,12 @@ export class RegisterComponent {
 
   constructor(private auth: AuthService) { }
 
-  onRegister(): void {
-    this.auth.register(this.user).then((user) => {
-      console.log(user);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  }
+  // onRegister(): void {
+  //   this.auth.register(this.user).then((user) => {
+  //     console.log(user);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   })
+  // }
 }
