@@ -7,8 +7,6 @@ import { Angular2TokenService } from 'angular2-token';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-
   constructor(private _tokenService: Angular2TokenService) {
     this._tokenService.init({
       apiBase: 'http://localhost:3000',

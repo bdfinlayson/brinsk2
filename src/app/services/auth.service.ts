@@ -23,8 +23,6 @@ export class AuthService {
       email:    user.email,
       password: user.password
     })
-    // return this.http
-    //   .post(url, user, { observe: 'response' });
   }
 
   // register(user: User): Promise<any> {

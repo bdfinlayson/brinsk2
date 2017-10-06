@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { AuthGuard } from '../../auth-guard.service';
 
 @NgModule({
   imports: [
@@ -11,6 +12,9 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   ],
   declarations: [
     DashboardComponent
+  ],
+  providers: [
+    AuthGuard
   ]
 })
 export class DashboardModule {}

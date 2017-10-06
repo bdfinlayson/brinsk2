@@ -23,12 +23,11 @@ export class LoginComponent {
   onLogin(): void {
     console.log(this.user)
     this.auth.login(this.user).subscribe(response => {
-      console.log(response);
+      if(this._tokenService.userSignedIn()) {
+        this.router.navigateByUrl('dashboard')
+      }else{
+        this.router.navigateByUrl('auth/login')
+      }
     })
-    if(this._tokenService.userSignedIn()) {
-      this.router.navigateByUrl('dashboard')
-    }else{
-      this.router.navigateByUrl('login')
-    }
   }
 }
