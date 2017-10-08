@@ -26,7 +26,7 @@ export class LoginComponent {
       if(this._tokenService.userSignedIn()) {
         this.router.navigateByUrl('dashboard')
       }else{
-        this.router.navigateByUrl('auth/login')
+        this.router.navigateByUrl('auth')
       }
     })
   }
