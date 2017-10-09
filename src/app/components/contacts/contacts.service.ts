@@ -6,12 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ContactsService {
-  constructor(private _tokenService: Angular2TokenService) {
-    this._tokenService.init({
-      apiBase: 'http://localhost:3000',
-      apiPath: 'api/v1'
-    });
-  }
+  constructor(private _tokenService: Angular2TokenService) {}
 
   getContacts(): Observable<any> {
     return this._tokenService.get('contacts')

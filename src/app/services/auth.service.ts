@@ -25,6 +25,10 @@ export class AuthService {
     })
   }
 
+  isUserSignedIn(): Boolean {
+    return this._tokenService.userSignedIn()
+  }
+
   // register(user: User): Promise<any> {
   //   let url: string = `${this.BASE_REGISTER_URL}`;
   //   return this.http
