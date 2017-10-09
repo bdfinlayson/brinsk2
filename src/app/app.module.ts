@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './components/auth/auth.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
+import { ContactsModule } from './components/contacts/contacts.module';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -17,6 +18,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,
     AuthModule,
     DashboardModule,
+    ContactsModule,
     AppRoutingModule
   ],
   declarations: [

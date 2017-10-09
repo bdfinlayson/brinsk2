@@ -1,0 +1,10 @@
+<h1>Contacts</h1>
+<ul class="items">
+  <li *ngFor="let contact of contacts"
+    [class.selected]="contact.first_name === 'Bryan'">
+    <a [routerLink]="[contact.id]">
+      <span class="badge">{{ contact.id }}</span>{{ contact.first_name }}
+    </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
