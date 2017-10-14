@@ -41,12 +41,45 @@ describe('LoginComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
-
-    debugelement = fixture.debugElement.query(By.css('h1'));
-    el = debugelement.nativeElement;
+    debugelement = fixture.debugElement;
   })
 
-  it('should display the login title', () => {
+  function findEl(selector: string): HTMLElement {
+    return debugelement.query(By.css(selector)).nativeElement
+  }
+
+  it('should display the page title', () => {
+    el = findEl('h1')
     expect(el.textContent).toContain('Login')
+  })
+
+  it('should display the email field label', () => {
+    el = findEl('label[for=email]');
+    expect(el.textContent).toContain('Email')
+  })
+
+  it('should display the password field label', () => {
+    el = findEl('label[for=password]')
+    expect(el.textContent).toContain('Password')
+  })
+
+  it('should display the email field placeholder', () => {
+    el = findEl('input[id=email]')
+    expect(el.getAttribute('placeholder')).toEqual('Enter your email')
+  })
+
+  it('should display the password field placeholder', () => {
+    el = findEl('input[id=password]')
+    expect(el.getAttribute('placeholder')).toEqual('Enter your password')
+  })
+
+  it('should have a submit button', () => {
+    el = findEl('button[type=submit]')
+    expect(el.textContent).toContain('Submit')
+  })
+
+  it('should have a register link', () => {
+    el = findEl('a[id=register]')
+    expect(el.textContent).toContain('REGISTER')
   })
 })
